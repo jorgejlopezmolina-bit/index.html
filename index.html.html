@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONPER FCom | El puente entre el nuevo talento periodístico y la industria de la comunicación</title>
+    <!-- Tipografías: Merriweather (Serif) e Inter (Sans-Serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-noche: #1A2C39;
+            --verde-fcom: #2ECC71;
+            --amarillo-enfasis: #F1C40F;
+            --blanco-pureness: #FFFFFF;
+            --gris-claro: #F8F9FA;
+            --gris-texto: #4A5568;
+            --rojo-acento: #E74C3C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--blanco-pureness);
+            color: var(--azul-noche);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .serif-title {
+            font-family: 'Merriweather', serif;
+        }
+
+        /* CABECERA CON EL LOGOTIPO OFICIAL EXACTO */
+        header {
+            background-color: var(--blanco-pureness);
+            color: var(--azul-noche);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--azul-noche);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-symbol {
+            font-size: 2.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--azul-noche);
+        }
+
+        .logo-subtitle {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+        }
+
+        .logo-subtitle .blue-text {
+            color: var(--azul-noche);
+        }
+
+        .logo-subtitle .red-text {
+            color: var(--rojo-acento);
+        }
+
+        .logo-baseline {
+            font-size: 0.65rem;
+            color: var(--gris-texto);
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--azul-noche);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--rojo-acento);
+        }
+
+        .cta-nav {
+            background-color: var(--rojo-acento);
+            padding: 8px 16px;
+            border-radius: 4px;
+            color: white !important;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-noche) 0%, #2C3E50 100%);
+            color: var(--blanco-pureness);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.3rem;
+            max-width: 800px;
+            margin: 0 auto 1rem auto;
+            line-height: 1.2;
+        }
+
+        .hero .campaign-slogan {
+            font-size: 1.15rem;
+            color: var(--verde-fcom);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
+            color: #E2E8F0;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--rojo-acento);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* SECCIONES GENERALES */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h3 {
+            font-size: 2rem;
+            color: var(--azul-noche);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--gris-texto);
+        }
+
+        /* GRID DE VALOR Y ALUMNOS */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--gris-claro);
+            border-top: 4px solid var(--azul-noche);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--azul-noche);
+        }
+
+        .card p {
+            color: var(--gris-texto);
+            font-size: 0.95rem;
+        }
+
+        /* QUIÉNES SOMOS */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--gris-texto);
+        }
+
+        .values-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .badge {
+            background-color: var(--azul-noche);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .badge-verified {
+            background-color: var(--verde-fcom);
+            color: var(--azul-noche);
+        }
+
+        /* BLOG / 8 ENTRADAS MULTIMEDIA */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .blog-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.2s;
+        }
+
+        .blog-card:hover {
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        }
+
+        .blog-header {
+            background-color: var(--azul-noche);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .blog-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .blog-body h5 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--azul-noche);
+        }
+
+        .blog-body p {
+            font-size: 0.9rem;
+            color: var(--gris-texto);
+            margin-bottom: 1rem;
+        }
+
+        .media-tag {
+            display: inline-block;
+            background: #EDF2F7;
+            color: #2D3748;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .btn-leer {
+            color: var(--azul-noche);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-leer:hover {
+            color: var(--rojo-acento);
+        }
+
+        /* SECCIÓN CONTACTO */
+        .contact-section {
+            background-color: var(--azul-noche);
+            color: white;
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem auto;
+            max-width: 1000px;
+        }
+
+        .contact-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            color: #CBD5E0;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            font-family: inherit;
+        }
+
+        .contact-form button {
+            background-color: var(--verde-fcom);
+            color: var(--azul-noche);
+            font-weight: 700;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0F172A;
+            color: #94A3B8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p span {
+            color: var(--amarillo-enfasis);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA CON EL LOGOTIPO OFICIAL EXACTO -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-symbol" title="Logotipo Oficial CONPE">📡✒️</div>
+            <div class="logo-text">
+                <h1>CONPE</h1>
+                <div class="logo-subtitle">
+                    <span class="blue-text">Conectando Fcom</span> <span class="red-text">Sevilla</span>
+                </div>
+                <p class="logo-baseline">«El puente entre el nuevo talento periodístico y la industria de la comunicación»</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyecto">Sobre el Proyecto</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#talento">Directorio B2B</a></li>
+                <li><a href="#blog">Noticias & Casos (8)</a></li>
+                <li><a href="#contacto" class="cta-nav">Acceso Reclutadores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO / INICIO -->
+    <section id="inicio" class="hero">
+        <p class="campaign-slogan">«Talento con evidencias, futuro en activo»</p>
+        <h2 class="serif-title">La cantera del periodismo de Sevilla, en abierto.</h2>
+        <p>Una plataforma inteligente de portafolios verificados que conecta el talento universitario con las necesidades reales del tejido mediático e institucional.</p>
+        <div class="btn-group">
+            <a href="#contacto" class="btn btn-primary">Solicitar Acceso B2B</a>
+            <a href="#blog" class="btn btn-secondary">Explorar Muestras</a>
+        </div>
+    </section>
+
+    <!-- SOBRE EL PROYECTO -->
+    <section id="proyecto">
+        <div class="section-title">
+            <h3 class="serif-title">Diagnóstico y Solución Estratégica</h3>
+            <p>Superando la rigidez del currículum tradicional mediante el principio: <em>"Show, don't tell"</em>.</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <h4>Portafolio Dinámico</h4>
+                <p>Soporte nativo multimedia para reportajes de investigación, pódcasts embebidos (Spotify), gráficos interactivos y piezas audiovisuales.</p>
+            </div>
+            <div class="card" style="border-top-color: var(--verde-fcom);">
+                <h4>Sello de Verificación</h4>
+                <p>Garantía académica oficial otorgada por el profesorado de la FCom que avala la autoría, rigor y calidad técnica de los trabajos expuestos.</p>
+            </div>
+            <div class="card" style="border-top-color: var(--amarillo-enfasis);">
+                <h4>Directorio B2B Avanzado</h4>
+                <p>Buscador especializado para jefes de sección y reclutadores filtrado por competencias periodísticas concretas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIÉNES SOMOS -->
+    <section id="quienes-somos" style="background-color: var(--gris-claro);">
+        <div class="about-content" style="max-width: 1200px; margin: 0 auto;">
+            <div class="about-text">
+                <h3 class="serif-title" style="font-size: 2rem; margin-bottom: 1rem; color: var(--azul-noche);">Identidad y Compromiso FCom</h3>
+                <p><strong>CONPER FCom</strong> nace para resolver la invisibilidad de los proyectos de alto valor informativo generados en las aulas de la Universidad de Sevilla, evitando que queden atrapados en repositorios aislados.</p>
+                <p>Nuestro modelo de sostenibilidad combina alianzas institucionales (Diputación, Junta de Andalucía y CPPA Sevilla) garantizando un acceso 100% gratuito para todo el alumnado.</p>
+                <div class="values-badges">
+                    <span class="badge badge-verified">Rigor Académico</span>
+                    <span class="badge">Independencia</span>
+                    <span class="badge badge-verified">Utilidad Pública</span>
+                    <span class="badge">Transparencia</span>
+                </div>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Estudiantes FCom" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.08);">
+            </div>
+        </div>
+    </section>
+
+    <!-- DIRECTORIO / CANTERA DE ALUMNOS -->
+    <section id="talento">
+        <div class="section-title">
+            <h3 class="serif-title">Cantera Destacada FCom</h3>
+            <p>Perfiles validados y listos para la inserción laboral directa en medios y gabinetes.</p>
+        </div>
+        <div class="grid-3">
+            <!-- Tu perfil -->
+            <div class="card" style="border-top-color: var(--rojo-acento);">
+                <span class="badge badge-verified" style="margin-bottom: 10px; display: inline-block;">Sello FCom Verificado</span>
+                <h4>Jorge J. López</h4>
+                <p><strong>Especialidad:</strong> Periodista experto en Análisis Político en Andalucía.</p>
+                <p style="margin-top: 10px; font-style: italic;">«Informes de seguimiento institucional, crónicas parlamentarias y visualización de datos electorales autonómicos.»</p>
+            </div>
+            <!-- Tu compañera María F. Aragón -->
+            <div class="card">
+                <span class="badge badge-verified" style="margin-bottom: 10px; display: inline-block;">Sello FCom Verificado</span>
+                <h4>María F. Aragón</h4>
+                <p><strong>Especialidad:</strong> Periodismo de Decoración y Lifestyle.</p>
+                <p style="margin-top: 10px; font-style: italic;">«Magazine digital especializado en tendencias de diseño de interiores, arquitectura y estilo de vida.»</p>
+            </div>
+            <!-- Compañera 1 -->
+            <div class="card">
+                <span class="badge badge-verified" style="margin-bottom: 10px; display: inline-block;">Sello FCom Verificado</span>
+                <h4>Sofía Martínez</h4>
+                <p><strong>Especialidad:</strong> Periodismo Cultural y Artes Escénicas.</p>
+                <p style="margin-top: 10px; font-style: italic;">«Críticas de cine, teatro y cobertura de festivales cinematográficos andaluces.»</p>
+            </div>
+            <!-- Compañero 2 -->
+            <div class="card">
+                <span class="badge badge-verified" style="margin-bottom: 10px; display: inline-block;">Sello FCom Verificado</span>
+                <h4>Álvaro G. Romero</h4>
+                <p><strong>Especialidad:</strong> Periodismo Económico y Mercados Sostenibles.</p>
+                <p style="margin-top: 10px; font-style: italic;">«Análisis de emprendimiento local, finanzas verdes y start-ups tecnológicas.»</p>
+            </div>
+            <!-- Compañera 3 -->
+            <div class="card">
+                <span class="badge badge-verified" style="margin-bottom: 10px; display: inline-block;">Sello FCom Verificado</span>
+                <h4>Elena Ruiz</h4>
+                <p><strong>Especialidad:</strong> Periodismo Científico y Medio Ambiente.</p>
+                <p style="margin-top: 10px; font-style: italic;">«Reportajes de divulgación sobre transición energética y conservación de ecosistemas.»</p>
+            </div>
+            <!-- Compañero 4 -->
+            <div class="card">
+                <span class="badge badge-verified" style="margin-bottom: 10px; display: inline-block;">Sello FCom Verificado</span>
+                <h4>Marcos P. Delgado</h4>
+                <p><strong>Especialidad:</strong> Periodismo Deportivo y Nuevas Narrativas.</p>
+                <p style="margin-top: 10px; font-style: italic;">«Pódcasts de análisis táctico y coberturas en formato vertical para redes.»</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTICIAS / BLOG (8 ENTRADAS MULTIMEDIA) -->
+    <section id="blog" style="background-color: var(--gris-claro);">
+        <div class="section-title">
+            <h3 class="serif-title">Actualidad y Muestras de Contenido</h3>
+            <p>Selección de 8 entradas que combinan texto, fotografía, infografía y vídeo en formato PMV.</p>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-header"><span>Política</span><span>Texto</span></div>
+                <div class="blog-body">
+                    <div>
+                        <span class="media-tag">Análisis Político</span>
+                        <h5>Claves del panorama institucional en Andalucía</h5>
+                        <p>Seguimiento y crónica de la actualidad política regional y parlamentaria por Jorge J. López.</p>
+                    </div>
+                    <a href="#" class="btn-leer">Leer artículo &rarr;</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-header"><span>Lifestyle</span><span>Fotografía</span></div>
+                <div class="blog-body">
+                    <div>
+                        <span class="media-tag">Diseño y Tendencias</span>
+                        <h5>Nuevas corrientes de decoración sostenible</h5>
+                        <p>Reportaje visual sobre interiorismo y estilo de vida dirigido por María F. Aragón.</p>
+                    </div>
+                    <a href="#" class="btn-leer">Ver galería &rarr;</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-header"><span>Datos</span><span>Infografía</span></div>
+                <div class="blog-body">
+                    <div>
+                        <span class="media-tag">Visualización de Datos</span>
+                        <h5>Inserción laboral de los egresados US</h5>
+                        <p>Infografía interactiva elaborada con Flourish sobre tasas de empleo sectorial.</p>
+                    </div>
+                    <a href="#" class="btn-leer">Ver infografía &rarr;</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-header"><span>Audio</span><span>Pódcast</span></div>
+                <div class="blog-body">
+                    <div>
+                        <span class="media-tag">Pódcast Embebido</span>
+                        <h5>Voces del G10: Entrevistas exclusivas</h5>
+                        <p>Episodio piloto sobre los retos éticos de la inteligencia artificial en los medios.</p>
+                    </div>
+                    <a href="#" class="btn-leer">Escuchar audio &rarr;</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-header"><span>Televisión</span><span>Vídeo</span></div>
+                <div class="blog-body">
+                    <div>
+                        <span class="media-tag">Formato Reel / TV</span>
+                        <h5>Informativo monográfico FCom TV</h5>
+                        <p>Telediario experimental producido íntegramente por alumnos de 4º curso.</p>
+                    </div>
+                    <a href="#" class="btn-leer">Reproducir vídeo &rarr;</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-header"><span>Opinión</span><span>Texto</span></div>
+                <div class="blog-body">
+                    <div>
+                        <span class="media-tag">Tribuna Abierta</span>
+                        <h5>Por qué necesitamos portafolios auditados</h5>
+                        <p>Reflexión crítica sobre la necesidad de certificar competencias frente al CV plano.</p>
+                    </div>
+                    <a href="#" class="btn-leer">Leer tribuna &rarr;</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-header"><span>Fact-Checking</span><span>Infografía</span></div>
+                <div class="blog-body">
+                    <div>
+                        <span class="media-tag">Verificación</span>
+                        <h5>Desmontando bulos en redes sociales</h5>
+                        <p>Guía visual rápida de verificación de imágenes y vídeos falsos en X y TikTok.</p>
+                    </div>
+                    <a href="#" class="btn-leer">Ver guía &rarr;</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-header"><span>Institucional</span><span>Vídeo & Texto</span></div>
+                <div class="blog-body">
+                    <div>
+                        <span class="media-tag">Presentación PMV</span>
+                        <h5>Guía de uso para reclutadores B2B</h5>
+                        <p>Manual interactivo para agencias de comunicación interesadas en fichar talento junior.</p>
+                    </div>
+                    <a href="#" class="btn-leer">Acceder al manual &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section id="contacto">
+        <div class="contact-section">
+            <h3 class="serif-title">¿Eres un medio o agencia de comunicación?</h3>
+            <p>Accede al directorio exclusivo de talento verificado y descubre los perfiles idóneos para tus vacantes de prácticas o empleo en Sevilla.</p>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Solicitud enviada con éxito! Nos pondremos en contacto con su medio.');">
+                <input type="text" placeholder="Nombre del Medio / Empresa" required>
+                <input type="email" placeholder="Correo electrónico corporativo" required>
+                <textarea rows="3" placeholder="Mensaje o perfil de talento requerido"></textarea>
+                <button type="submit">Solicitar Acceso Reclutador B2B</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026-2027 CONPER FCom — <span>El puente entre el nuevo talento periodístico y la industria de la comunicación</span></p>
+        <p style="margin-top: 5px; font-size: 0.8rem;">Facultad de Comunicación · Universidad de Sevilla</p>
+    </footer>
+
+</body>
+</html>
